@@ -14,7 +14,7 @@ namespace VendingMachine.Api.TestDoubles.Tests
 			bool coinInsertedEventWasFired = false;
 			Hardware.CoinSlot.CoinInsertedEvent += ( s, e ) => coinInsertedEventWasFired = true;
 
-			TestHardware.CoinSlot.InsertCoin();
+			TestHardware.CoinSlot.InsertCoin( 0.20m );
 
 			coinInsertedEventWasFired.ShouldBeTrue();
 		}
@@ -26,9 +26,21 @@ namespace VendingMachine.Api.TestDoubles.Tests
 		{
 			Hardware.CoinSlot.CoinCount.ShouldEqual( 0 );
 
-			TestHardware.CoinSlot.InsertCoin();
+			TestHardware.CoinSlot.InsertCoin( 0.50m );
 
 			Hardware.CoinSlot.CoinCount.ShouldEqual( 1 );
+		}
+
+
+
+		[Test]
+		public void Should_increase_the_total_in_the_coin_slot_by_the_value_of_the_coin()
+		{
+			Hardware.CoinSlot.Value.ShouldEqual( 0.00m );
+
+			TestHardware.CoinSlot.InsertCoin( 0.10m );
+
+			Hardware.CoinSlot.Value.ShouldEqual( 0.10m );
 		}
 	}
 }

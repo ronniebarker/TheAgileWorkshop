@@ -8,5 +8,6 @@ namespace VendingMachine.Api
 	{
 		event EventHandler<EventArgs> CoinInsertedEvent;
 		int CoinCount { get; }
+		decimal Value { get; }
 	}
 }

@@ -10,9 +10,10 @@ namespace VendingMachine.Api.TestDoubles
 
 
 
-		public void InsertCoin()
+		public void InsertCoin( decimal value )
 		{
 			CoinCount++;
+			Value += value;
 
 			if( CoinInsertedEvent != null )
 			{
@@ -23,5 +24,6 @@ namespace VendingMachine.Api.TestDoubles
 
 
 		public int CoinCount { get; private set; }
+		public decimal Value { get; private set; }
 	}
 }
