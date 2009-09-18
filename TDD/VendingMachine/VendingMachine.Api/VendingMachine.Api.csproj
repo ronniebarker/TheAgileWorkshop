@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IButton.cs" />
+    <Compile Include="ICoinSlot.cs" />
     <Compile Include="IVendingMachineHardware.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

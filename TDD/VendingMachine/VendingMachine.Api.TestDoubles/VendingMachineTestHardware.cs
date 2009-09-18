@@ -5,6 +5,7 @@ namespace VendingMachine.Api.TestDoubles
 		public VendingMachineTestHardware()
 		{
 			RejectButton = new Button();
+			CoinSlot = new CoinSlot();
 		}
 
 
@@ -16,6 +17,14 @@ namespace VendingMachine.Api.TestDoubles
 
 
 
+		ICoinSlot IVendingMachineHardware.CoinSlot
+		{
+			get { return CoinSlot; }
+		}
+
+
+
 		public Button RejectButton { get; private set; }
+		public CoinSlot CoinSlot { get; private set; }
 	}
 }

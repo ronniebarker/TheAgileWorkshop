@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace VendingMachine.Api.TestDoubles
 {
-	public class FixtureBase
+	public abstract class FixtureBase
 	{
 		protected VendingMachineTestHardware TestHardware;
 

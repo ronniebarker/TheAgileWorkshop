@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="When_a_coin_is_inserted_into_the_coin_slot_of_the_machine.cs" />
     <Compile Include="When_the_reject_button_is_pressed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
