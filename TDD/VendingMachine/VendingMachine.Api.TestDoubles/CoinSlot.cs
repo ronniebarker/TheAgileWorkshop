@@ -12,7 +12,16 @@ namespace VendingMachine.Api.TestDoubles
 
 		public void InsertCoin()
 		{
-			CoinInsertedEvent( this, new EventArgs() );
+			CoinCount++;
+
+			if( CoinInsertedEvent != null )
+			{
+				CoinInsertedEvent( this, new EventArgs() );
+			}
 		}
+
+
+
+		public int CoinCount { get; private set; }
 	}
 }

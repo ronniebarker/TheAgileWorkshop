@@ -18,5 +18,17 @@ namespace VendingMachine.Api.TestDoubles.Tests
 
 			coinInsertedEventWasFired.ShouldBeTrue();
 		}
+
+
+
+		[Test]
+		public void Should_increase_coin_count()
+		{
+			Hardware.CoinSlot.CoinCount.ShouldEqual( 0 );
+
+			TestHardware.CoinSlot.InsertCoin();
+
+			Hardware.CoinSlot.CoinCount.ShouldEqual( 1 );
+		}
 	}
 }
