@@ -2,7 +2,7 @@ using System;
 
 
 
-namespace VendingMachine.Api.TestDoubles
+namespace VendingMachine.Api
 {
 	public interface IButton
 	{

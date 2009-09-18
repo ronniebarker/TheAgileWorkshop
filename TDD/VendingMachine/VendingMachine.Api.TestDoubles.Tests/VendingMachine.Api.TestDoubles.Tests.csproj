@@ -65,6 +65,10 @@
       <Project>{D24791AC-F15C-401C-8977-F987FD8496AF}</Project>
       <Name>VendingMachine.Api.TestDoubles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VendingMachine.Api\VendingMachine.Api.csproj">
+      <Project>{3BCF1C33-AADD-4333-ACF1-3B930387E961}</Project>
+      <Name>VendingMachine.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

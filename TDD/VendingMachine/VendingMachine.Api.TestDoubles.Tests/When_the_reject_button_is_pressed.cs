@@ -6,19 +6,18 @@ using NUnit.Framework;
 namespace VendingMachine.Api.TestDoubles.Tests
 {
 	[TestFixture]
-	public class When_the_reject_button_is_pressed
+	public class When_the_reject_button_is_pressed : FixtureBase
 	{
 		[Test]
 		public void Should_fire_the_RejectButtonPressed_event()
 		{
-			var rejectButtonMock = new Button();
-			IButton rejectButton = rejectButtonMock;
-			bool fired = false;
-			rejectButton.RejectButtonPressed += ( s, e ) => fired = true;
+			bool rejectButtonEventWasFired = false;
 
-			rejectButtonMock.PressRejectButton();
+			Hardware.RejectButton.RejectButtonPressed += ( s, e ) => rejectButtonEventWasFired = true;
 
-			fired.ShouldBeTrue();
+			TestHardware.RejectButton.PressRejectButton();
+
+			rejectButtonEventWasFired.ShouldBeTrue();
 		}
 	}
 }
