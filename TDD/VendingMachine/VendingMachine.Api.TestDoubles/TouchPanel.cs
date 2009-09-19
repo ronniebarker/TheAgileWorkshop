@@ -35,6 +35,10 @@ namespace VendingMachine.Api.TestDoubles
 
 		public void Press( TouchPanelLetter letter )
 		{
+			if( Code != null )
+			{
+				throw new InvalidOperationException( "Code can only start with a letter" );
+			}
 			Code += letter.ToString();
 		}
 	}

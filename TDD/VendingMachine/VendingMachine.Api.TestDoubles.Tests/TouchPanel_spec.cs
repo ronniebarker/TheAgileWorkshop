@@ -165,5 +165,15 @@ namespace VendingMachine.Api.TestDoubles.Tests
 			TestHardware.TouchPanel.Press( TouchPanelNumber.One );
 			Hardware.TouchPanel.Code.ShouldEqual( "E1" );
 		}
+
+
+
+		[Test]
+		[ExpectedException( typeof( InvalidOperationException ) )]
+		public void Should_not_accept_two_letters_in_a_row()
+		{
+			TestHardware.TouchPanel.Press( TouchPanelLetter.A );
+			TestHardware.TouchPanel.Press( TouchPanelLetter.B );
+		}
 	}
 }
