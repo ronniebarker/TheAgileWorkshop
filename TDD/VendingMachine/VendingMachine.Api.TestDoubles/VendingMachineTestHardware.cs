@@ -6,6 +6,7 @@ namespace VendingMachine.Api.TestDoubles
 		{
 			RejectButton = new Button();
 			CoinSlot = new CoinSlot();
+			TouchPanel = new TouchPanel();
 		}
 
 
@@ -24,7 +25,15 @@ namespace VendingMachine.Api.TestDoubles
 
 
 
+		ITouchPanel IVendingMachineHardware.TouchPanel
+		{
+			get { return TouchPanel; }
+		}
+
+
+
 		public Button RejectButton { get; private set; }
 		public CoinSlot CoinSlot { get; private set; }
+		public TouchPanel TouchPanel { get; private set; }
 	}
 }

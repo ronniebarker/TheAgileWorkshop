@@ -4,5 +4,6 @@ namespace VendingMachine.Api
 	{
 		IButton RejectButton { get; }
 		ICoinSlot CoinSlot { get; }
+		ITouchPanel TouchPanel { get; }
 	}
 }

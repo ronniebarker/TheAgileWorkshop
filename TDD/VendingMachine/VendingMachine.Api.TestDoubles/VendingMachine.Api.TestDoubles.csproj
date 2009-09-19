@@ -53,6 +53,7 @@
     <Compile Include="CoinSlot.cs" />
     <Compile Include="FixtureBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TouchPanel.cs" />
     <Compile Include="VendingMachineTestHardware.cs" />
   </ItemGroup>
   <ItemGroup>
