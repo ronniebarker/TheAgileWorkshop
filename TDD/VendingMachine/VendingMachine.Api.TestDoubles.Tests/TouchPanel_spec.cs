@@ -170,10 +170,37 @@ namespace VendingMachine.Api.TestDoubles.Tests
 
 		[Test]
 		[ExpectedException( typeof( InvalidOperationException ) )]
-		public void Should_not_accept_two_letters_in_a_row()
+		public void Should_throw_invalid_operation_exception_if_two_letters_entered_in_a_row()
 		{
 			TestHardware.TouchPanel.Press( TouchPanelLetter.A );
 			TestHardware.TouchPanel.Press( TouchPanelLetter.B );
+		}
+
+
+
+		[Test]
+		[ExpectedException( typeof( InvalidOperationException ) )]
+		public void Should_throw_invalid_operation_exception_if_letter_followed_by_two_numbers_is_entered()
+		{
+			TestHardware.TouchPanel.Press( TouchPanelLetter.A );
+			TestHardware.TouchPanel.Press( TouchPanelNumber.One );
+			TestHardware.TouchPanel.Press( TouchPanelNumber.Three );
+		}
+
+
+
+		[Test]
+		public void Should_clear_code_if_clear_button_is_pressed_and_allow_a_full_code_to_be_entered()
+		{
+			TestHardware.TouchPanel.Press( TouchPanelLetter.C );
+			TestHardware.TouchPanel.Press( TouchPanelNumber.Seven );
+
+			TestHardware.TouchPanel.Press( TouchPanelButton.Clear );
+
+			TestHardware.TouchPanel.Press( TouchPanelLetter.E );
+			TestHardware.TouchPanel.Press( TouchPanelNumber.Five );
+
+			Hardware.TouchPanel.Code.ShouldEqual( "E5" );
 		}
 	}
 }
