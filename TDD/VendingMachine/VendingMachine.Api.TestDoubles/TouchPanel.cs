@@ -11,13 +11,6 @@ namespace VendingMachine.Api.TestDoubles
 
 
 
-		public void PressB()
-		{
-			Code += "B";
-		}
-
-
-
 		protected virtual void OnCodeEntered()
 		{
 			if( CodeEnteredEvent != null )
@@ -36,6 +29,13 @@ namespace VendingMachine.Api.TestDoubles
 			}
 			Code += ( (int)number ).ToString();
 			OnCodeEntered();
+		}
+
+
+
+		public void Press( TouchPanelLetter letter )
+		{
+			Code += letter.ToString();
 		}
 	}
 }

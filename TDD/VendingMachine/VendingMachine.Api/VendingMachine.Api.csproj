@@ -51,6 +51,7 @@
     <Compile Include="ITouchPanel.cs" />
     <Compile Include="IVendingMachineHardware.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TouchPanelLetter.cs" />
     <Compile Include="TouchPanelNumber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

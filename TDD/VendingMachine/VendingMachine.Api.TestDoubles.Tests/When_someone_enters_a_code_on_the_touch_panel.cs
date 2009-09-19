@@ -15,7 +15,7 @@ namespace VendingMachine.Api.TestDoubles.Tests
 
 			Hardware.TouchPanel.CodeEnteredEvent += ( s, e ) => codeEntered = e.Code;
 
-			TestHardware.TouchPanel.PressB();
+			TestHardware.TouchPanel.Press( TouchPanelLetter.B );
 			TestHardware.TouchPanel.Press( TouchPanelNumber.Four );
 
 			codeEntered.ShouldEqual( "B4" );
