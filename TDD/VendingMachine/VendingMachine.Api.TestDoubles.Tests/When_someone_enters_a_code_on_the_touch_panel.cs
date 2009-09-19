@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace VendingMachine.Api.TestDoubles.Tests
 {
 	[TestFixture]
-	public class When_someone_enters_a_letter_and_number_on_the_touch_panel: FixtureBase
+	public class When_someone_enters_a_letter_and_number_on_the_touch_panel : FixtureBase
 	{
 		[Test]
 		public void Should_raise_a_code_entered_event()
@@ -16,7 +16,7 @@ namespace VendingMachine.Api.TestDoubles.Tests
 			Hardware.TouchPanel.CodeEnteredEvent += ( s, e ) => codeEntered = e.Code;
 
 			TestHardware.TouchPanel.PressB();
-			TestHardware.TouchPanel.Press4();
+			TestHardware.TouchPanel.Press( TouchPanelNumber.Four );
 
 			codeEntered.ShouldEqual( "B4" );
 		}

@@ -6,22 +6,36 @@ namespace VendingMachine.Api.TestDoubles
 {
 	public class TouchPanel : ITouchPanel
 	{
-		private string code;
 		public event EventHandler<CodeEnteredEventArgs> CodeEnteredEvent;
+		public string Code { get; private set; }
 
 
 
 		public void PressB()
 		{
-			code += "B";
+			Code += "B";
 		}
 
 
 
-		public void Press4()
+		protected virtual void OnCodeEntered()
 		{
-			code += "4";
-			CodeEnteredEvent( this, new CodeEnteredEventArgs( code ) );
+			if( CodeEnteredEvent != null )
+			{
+				CodeEnteredEvent( this, new CodeEnteredEventArgs( Code ) );
+			}
+		}
+
+
+
+		public void Press( TouchPanelNumber number )
+		{
+			if( Code == null )
+			{
+				throw new InvalidOperationException( "Code must start with a letter" );
+			}
+			Code += ( (int)number ).ToString();
+			OnCodeEntered();
 		}
 	}
 }

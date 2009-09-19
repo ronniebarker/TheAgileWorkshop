@@ -7,6 +7,7 @@ namespace VendingMachine.Api
 	public interface ITouchPanel
 	{
 		event EventHandler<CodeEnteredEventArgs> CodeEnteredEvent;
+		string Code { get; }
 	}
 
 
@@ -25,5 +26,17 @@ namespace VendingMachine.Api
 
 
 		public string Code { get; private set; }
+	}
+
+
+
+
+
+
+
+	public enum TouchPanelNumber
+	{
+		Zero = 0,
+		Four = 4,
 	}
 }
