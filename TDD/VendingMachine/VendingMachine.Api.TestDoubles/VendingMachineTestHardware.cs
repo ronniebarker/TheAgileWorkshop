@@ -7,7 +7,7 @@ namespace VendingMachine.Api.TestDoubles
 			RejectButton = new Button();
 			CoinSlot = new CoinSlot();
 			TouchPanel = new TouchPanel();
-			VendorWithTray = new VendorWithTray();
+			Vendor = new VendorWithTray();
 		}
 
 
@@ -35,14 +35,14 @@ namespace VendingMachine.Api.TestDoubles
 
 		ITray IVendingMachineHardware.Tray
 		{
-			get { return VendorWithTray; }
+			get { return Vendor; }
 		}
 
 
 
 		IVendor IVendingMachineHardware.Vendor
 		{
-			get { return VendorWithTray; }
+			get { return Vendor; }
 		}
 
 
@@ -50,6 +50,6 @@ namespace VendingMachine.Api.TestDoubles
 		public Button RejectButton { get; private set; }
 		public CoinSlot CoinSlot { get; private set; }
 		public TouchPanel TouchPanel { get; private set; }
-		public VendorWithTray VendorWithTray { get; private set; }
+		public VendorWithTray Vendor { get; private set; }
 	}
 }

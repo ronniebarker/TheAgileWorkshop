@@ -2,6 +2,6 @@ namespace VendingMachine.Api
 {
 	public interface IVendor
 	{
-		void Vend();
+		void Vend( int productNumber );
 	}
 }
