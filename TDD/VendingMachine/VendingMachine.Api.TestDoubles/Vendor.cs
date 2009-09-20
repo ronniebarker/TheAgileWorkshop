@@ -14,9 +14,9 @@ namespace VendingMachine.Api.TestDoubles
 
 		public void Vend( int productNumber )
 		{
-			if( ( ! stock.ContainsKey( productNumber ) ) || ( stock[ productNumber ] < 1 ) )
+			if( ! CanVend( productNumber ) )
 			{
-				throw new InvalidOperationException( "Out of stock" );
+				throw new InvalidOperationException( "Cannot vend" );
 			}
 
 			if( ProductFellEvent != null )
@@ -34,6 +34,13 @@ namespace VendingMachine.Api.TestDoubles
 				throw new InvalidOperationException();
 			}
 			return stock[ productNumber ];
+		}
+
+
+
+		public bool CanVend( int productNumber )
+		{
+			return ( stock.ContainsKey( productNumber ) ) && ( stock[ productNumber ] > 0 );
 		}
 
 

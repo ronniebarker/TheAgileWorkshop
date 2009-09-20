@@ -36,5 +36,15 @@ namespace VendingMachine.Api.TestDoubles.Tests
 		{
 			Hardware.Vendor.GetStockLevel( 50 );
 		}
+
+
+
+		[Test]
+		public void Should_be_able_to_check_if_vending_is_possible_for_a_product()
+		{
+			TestHardware.Vendor.SetStockLevel( 17, 3 );
+			Hardware.Vendor.CanVend( 3 ).ShouldBeFalse();
+			Hardware.Vendor.CanVend( 17 ).ShouldBeTrue();
+		}
 	}
 }
