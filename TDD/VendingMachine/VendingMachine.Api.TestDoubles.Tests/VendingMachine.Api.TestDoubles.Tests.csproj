@@ -60,6 +60,7 @@
     <Compile Include="TouchPanel_spec.cs" />
     <Compile Include="Vendor_spec.cs" />
     <Compile Include="When_a_coin_is_inserted_into_the_coin_slot_of_the_machine.cs" />
+    <Compile Include="When_interacting_with_the_user.cs" />
     <Compile Include="When_someone_enters_a_code_on_the_touch_panel.cs" />
     <Compile Include="When_the_reject_button_is_pressed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

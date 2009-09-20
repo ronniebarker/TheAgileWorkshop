@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="CoinSlot.cs" />
+    <Compile Include="Display.cs" />
     <Compile Include="FixtureBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TouchPanel.cs" />

@@ -8,6 +8,7 @@ namespace VendingMachine.Api.TestDoubles
 			CoinSlot = new CoinSlot();
 			TouchPanel = new TouchPanel();
 			Vendor = new VendorWithTray();
+			Display = new Display();
 		}
 
 
@@ -47,9 +48,17 @@ namespace VendingMachine.Api.TestDoubles
 
 
 
+		IDisplay IVendingMachineHardware.Display
+		{
+			get { return Display; }
+		}
+
+
+
 		public Button RejectButton { get; private set; }
 		public CoinSlot CoinSlot { get; private set; }
 		public TouchPanel TouchPanel { get; private set; }
 		public VendorWithTray Vendor { get; private set; }
+		public Display Display { get; private set; }
 	}
 }

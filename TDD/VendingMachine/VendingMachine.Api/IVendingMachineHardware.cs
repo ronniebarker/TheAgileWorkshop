@@ -7,5 +7,6 @@ namespace VendingMachine.Api
 		ITouchPanel TouchPanel { get; }
 		ITray Tray { get; }
 		IVendor Vendor { get; }
+		IDisplay Display { get; }
 	}
 }

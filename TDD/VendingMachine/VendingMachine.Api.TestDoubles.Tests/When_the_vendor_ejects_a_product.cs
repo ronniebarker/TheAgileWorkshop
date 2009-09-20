@@ -29,5 +29,6 @@ namespace VendingMachine.Api.TestDoubles.Tests
 		{
 			Hardware.Vendor.Vend( 1 );
 		}
+
 	}
 }

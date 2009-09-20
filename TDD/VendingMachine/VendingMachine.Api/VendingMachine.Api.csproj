@@ -48,6 +48,7 @@
     <Compile Include="CodeEnteredEventArgs.cs" />
     <Compile Include="IButton.cs" />
     <Compile Include="ICoinSlot.cs" />
+    <Compile Include="IDisplay.cs" />
     <Compile Include="ITouchPanel.cs" />
     <Compile Include="ITray.cs" />
     <Compile Include="IVendingMachineHardware.cs" />
