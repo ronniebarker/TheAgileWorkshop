@@ -14,10 +14,7 @@ namespace VendingMachine.Api.TestDoubles
 
 		public void Vend( int productNumber )
 		{
-			if( ! CanVend( productNumber ) )
-			{
-				throw new InvalidOperationException( "Cannot vend" );
-			}
+			CheckVendAndThrow( productNumber );
 
 			if( ProductFellEvent != null )
 			{
@@ -29,10 +26,7 @@ namespace VendingMachine.Api.TestDoubles
 
 		public int GetStockLevel( int productNumber )
 		{
-			if( ! stock.ContainsKey( productNumber ) )
-			{
-				throw new InvalidOperationException();
-			}
+			CheckVendAndThrow( productNumber );
 			return stock[ productNumber ];
 		}
 
@@ -40,7 +34,39 @@ namespace VendingMachine.Api.TestDoubles
 
 		public bool CanVend( int productNumber )
 		{
-			return ( stock.ContainsKey( productNumber ) ) && ( stock[ productNumber ] > 0 );
+			return CheckVend( productNumber ) == null;
+		}
+
+
+
+		private Exception CheckVend( int productNumber )
+		{
+			if( ( productNumber < 0 ) || ( productNumber > 49 ) )
+			{
+				return new InvalidOperationException( "Invalid product code" );
+			}
+			if( ! stock.ContainsKey( productNumber ) )
+			{
+				return new InvalidOperationException( "Unregistered product code" );
+			}
+
+			if( stock[ productNumber ] <= 0 )
+			{
+				return new InvalidOperationException( "No Stock" );
+			}
+
+			return null;
+		}
+
+
+
+		private void CheckVendAndThrow( int productNumber )
+		{
+			var exception = CheckVend( productNumber );
+			if( exception != null )
+			{
+				throw exception;
+			}
 		}
 
 

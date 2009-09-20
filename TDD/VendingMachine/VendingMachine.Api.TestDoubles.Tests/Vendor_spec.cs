@@ -31,10 +31,19 @@ namespace VendingMachine.Api.TestDoubles.Tests
 
 
 		[Test]
-		[ExpectedException( typeof( InvalidOperationException ) )]
-		public void When_getting_stock_level_Should_throw_invalid_operation_exception_for_invalid_product_code()
+		[ExpectedException( typeof( InvalidOperationException ), ExpectedMessage = "Invalid product code" )]
+		public void When_getting_stock_level_Should_throw_invalid_operation_exception_for_invalid_product_code_50()
 		{
 			Hardware.Vendor.GetStockLevel( 50 );
+		}
+
+
+
+		[Test]
+		[ExpectedException( typeof( InvalidOperationException ), ExpectedMessage = "Invalid product code" )]
+		public void When_getting_stock_level_Should_throw_invalid_operation_exception_for_invalid_product_code_minus_1()
+		{
+			Hardware.Vendor.GetStockLevel( -1 );
 		}
 
 

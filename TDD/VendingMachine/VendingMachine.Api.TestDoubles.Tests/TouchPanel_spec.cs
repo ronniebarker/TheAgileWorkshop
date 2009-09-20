@@ -10,7 +10,7 @@ namespace VendingMachine.Api.TestDoubles.Tests
 	public class TouchPanel_spec_ : FixtureBase
 	{
 		[Test]
-		[ExpectedException( typeof( InvalidOperationException ) )]
+		[ExpectedException( typeof( InvalidOperationException ), ExpectedMessage = "Code must start with a letter" )]
 		public void Should_throw_invalid_operation_exception_if_number_entered_first()
 		{
 			TestHardware.TouchPanel.Press( TouchPanelNumber.Four );
@@ -169,7 +169,7 @@ namespace VendingMachine.Api.TestDoubles.Tests
 
 
 		[Test]
-		[ExpectedException( typeof( InvalidOperationException ) )]
+		[ExpectedException( typeof( InvalidOperationException ), ExpectedMessage = "Code can only start with a letter" )]
 		public void Should_throw_invalid_operation_exception_if_two_letters_entered_in_a_row()
 		{
 			TestHardware.TouchPanel.Press( TouchPanelLetter.A );
@@ -179,7 +179,7 @@ namespace VendingMachine.Api.TestDoubles.Tests
 
 
 		[Test]
-		[ExpectedException( typeof( InvalidOperationException ) )]
+		[ExpectedException( typeof( InvalidOperationException ), ExpectedMessage = "Code already has a number" )]
 		public void Should_throw_invalid_operation_exception_if_letter_followed_by_two_numbers_is_entered()
 		{
 			TestHardware.TouchPanel.Press( TouchPanelLetter.A );

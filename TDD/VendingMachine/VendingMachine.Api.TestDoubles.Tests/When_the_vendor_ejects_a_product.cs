@@ -24,7 +24,7 @@ namespace VendingMachine.Api.TestDoubles.Tests
 
 
 		[Test]
-		[ExpectedException(typeof(InvalidOperationException))]
+		[ExpectedException( typeof( InvalidOperationException ), ExpectedMessage = "Unregistered product code" )]
 		public void Should_raise_invalid_operation_exception_if_no_stock_ever_added()
 		{
 			Hardware.Vendor.Vend( 1 );
