@@ -27,6 +27,17 @@ namespace VendingMachine.Api.TestDoubles
 
 
 
+		public int GetStockLevel( int productNumber )
+		{
+			if( ! stock.ContainsKey( productNumber ) )
+			{
+				throw new InvalidOperationException();
+			}
+			return stock[ productNumber ];
+		}
+
+
+
 		public void SetStockLevel( int productCode, int stockLevel )
 		{
 			stock[ productCode ] = stockLevel;
