@@ -28,3 +28,8 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
+*.user
+bin
+obj
+_*
+.svn
